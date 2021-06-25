@@ -5,7 +5,10 @@ from pygorithm.strings import (
     isogram,
     pangram,
     manacher_algorithm,
-    palindrome)
+    palindrome,
+    longest_common_prefix,
+)
+
 
 class TestAnagram(unittest.TestCase):
     def test_anagram(self):
@@ -29,6 +32,11 @@ class TestPalindrome(unittest.TestCase):
 class TestManacherAlgorithm(unittest.TestCase):
     def test_manacher_algorithm(self):
         self.assertEqual(manacher_algorithm.manacher('babcbabcbaccba'), 'abcbabcba')
+
+class TestLongestCommonPrefix(unittest.TestCase):
+    def test_common_prefix(self):
+        words = ["hi", "hid", "hidden", "hideous"]
+        self.assertEqual(longest_common_prefix.longest_prefix(words), "hi")
 
 if __name__ == '__main__':
     unittest.main()
